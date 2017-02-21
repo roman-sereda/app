@@ -18,6 +18,7 @@
 !/backend/tmp/.keep
 
 /backend/configs/database.yml
+/frontend/node_modules
 
 # Ignore Byebug command history file.
 .byebug_history
