@@ -16,6 +16,7 @@
 /backend/tmp/*
 !/backend/log/.keep
 !/backend/tmp/.keep
+/backend/public/bundle.js
 
 /backend/configs/database.yml
 /frontend/node_modules
