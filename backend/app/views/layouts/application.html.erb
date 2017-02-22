@@ -5,10 +5,10 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div id = 'root'> The app.htmlrb has loaded </div>
+    <script src = 'http://localhost:8080/assets/bundle.js' ></script>
   </body>
 </html>
