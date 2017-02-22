@@ -8,7 +8,7 @@
   },
   "main": "bundle.js",
   "scripts": {
-    "build": "webpack -debug",
+    "build": "webpack --debug",
     "start": "webpack-dev-server --progress --inline --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.23.0",
     "es6-promise": "~4.0.5",
     "react-redux": "~5.0.2",
+    "react-router-redux": "^4.0.8",
     "redux": "~3.6.0",
     "webpack-dev-server": "~2.4.1"
   },
