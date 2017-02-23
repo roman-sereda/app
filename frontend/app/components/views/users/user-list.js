@@ -1,17 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router'
+import React from 'react';
 
-export default function(props) {
-  return (
-    <div className="users">
-      {props.users.map(user => {
-        return(
-          <div key={user.id}>
-            {user.name}
-            {user.pasword}
-          </div>
-        )
-      })}
-    </div>
-  )
-}
+export default React.createClass({
+
+    render: function(){
+      return <div className="users">
+        {this.props.users.map(user =>
+          <span className='user' key={user.id}>
+            <h1>{user.name}</h1>
+          </span>
+        )}
+      </div>
+    }
+})

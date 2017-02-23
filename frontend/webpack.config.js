@@ -1,5 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
+var WriteFilePlugin = require('write-file-webpack-plugin')
+
+devServer = {
+  outputPath: __dirname + "/../backend/public/",
+  hot: true
+},
 
 module.exports = {
   entry: './app/index.js',
@@ -17,7 +23,8 @@ module.exports = {
       query: { presets: [ 'es2015', 'react' ] }
     }]
   },
-  resolve:{
-    extensions: ['', '.jsx', '.js']
-  }
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
