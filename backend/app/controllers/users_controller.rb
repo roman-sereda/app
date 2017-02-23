@@ -15,7 +15,22 @@ class UsersController < ApplicationController
 
   end
 
-  def createDomain
+  def create
+    user = User.new(params)
+
+    if user.save
+      UserMailer.registration_confirmation(user).deliver
+    end
 
   end
+
+  def confirm_email
+    user = User.find_by_confirm_token(params[:id])
+    if user
+      user.email_activate
+    else
+      #error
+    end
+  end
+
 end
