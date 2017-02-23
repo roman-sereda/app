@@ -1,8 +1,9 @@
-class UsersController < ActionController::Base
+class UsersController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
-    render
+    users = User.all
+    render json: users
   end
 
   def show

@@ -8,6 +8,7 @@ export default function(props) {
         return(
           <div key={user.id}>
             {user.name}
+            {user.pasword}
           </div>
         )
       })}
