@@ -4,23 +4,25 @@ import SignUp from '../views/users/sign-up'
 import * as userApi from '../../api/user-api'
 import store from '../../store'
 
-const SignUpContainer = React.createClass({
+class SignUpContainer extends React.Component{
 
-  componentDidMount: function() {
-    userApi.UserList();
-  },
-
-  render: function() {
-    return (
-      <SignUp user={this.props.user} />
-    )
+  createUser(event){
+    event.preventDefault()
+    console.log("Event: create user")
+    var user = new FormData(document.getElementById('create_user_form'))
+    console.log(user[name])
+    userApi.createUser(user)
   }
 
-})
+  render() {
+    return <SignUp user={this.props.user} createUser={this.createUser} />
+  }
+
+}
 
 const mapStateToProps = function(store) {
   return {
-    user: store.userState.user
+    new_user: store.userState.new_user
   }
 }
 

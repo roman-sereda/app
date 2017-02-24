@@ -4,19 +4,17 @@ import UserList from '../views/users/user-list'
 import * as userApi from '../../api/user-api'
 import store from '../../store'
 
-const UserListContainer = React.createClass({
+class UserListContainer extends React.Component{
 
-  componentDidMount: function() {
-    userApi.UserList();
-  },
-
-  render: function() {
-    return (
-      <UserList users={this.props.users} />
-    )
+  componentDidMount() {
+    userApi.getUserList()
   }
 
-})
+  render() {
+    return <UserList users={this.props.users} />
+  }
+
+}
 
 const mapStateToProps = function(store) {
   return {

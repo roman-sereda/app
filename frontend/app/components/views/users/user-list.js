@@ -1,4 +1,5 @@
-import React from 'react';
+import React from           'react'
+import { Link } from        'react-router'
 
 export default React.createClass({
 
@@ -9,6 +10,7 @@ export default React.createClass({
             <h1>{user.name}</h1>
           </span>
         )}
+        <Link to='/signup' > Sign Up </Link>
       </div>
     }
 })

@@ -1,12 +1,21 @@
 import axios from 'axios'
 import store from '../store'
 import host from '../../config'
-import { getUserList } from '../actions/user-actions'
+import { getUserListSuccess, createUserSuccess } from '../actions/user-actions'
 
-export function UserList() {
+export function getUserList() {
   return axios.get('/users')
     .then(response => {
-      store.dispatch(getUserList(response.data))
+      store.dispatch(getUserListSuccess(response.data))
+      console.log(response.data)
+      return response
+    })
+}
+
+export function createUser(user) {
+  return axios.post('/users', user)
+    .then(response => {
+      store.dispatch(createUserSuccess(response.data))
       return response
     })
 }
